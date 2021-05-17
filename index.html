@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="UTF-">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=stylesheet href="./styles/reset.css">
+    <link rel=stylesheet href="./styles/style.css">
+</head>
+<body>
+
+    <header>
+        <p> a wild pokémon has appeared!</p>
+        <p>***instructions***</p>
+    </header>
+
+    <main>
+        <label for ="poke-1"><input type="radio" id="poke-1" name="pokemon"/><img id="poke-1-img" /></label>
+        <label for ="poke-2"><input type="radio" id="poke-2" name="pokemon"/><img id="poke-2-img" /></label>
+        <label for ="poke-3"><input type="radio" id="poke-3" name="pokemon"/><img id="poke-3-img" /></label>
+        <button id="capture">Catch 'em!</button>
+    </main>
+
+    <footer>
+        <p class="hidden">Total pokémon caught: 0</p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
