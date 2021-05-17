@@ -8,6 +8,7 @@ HTML ELEMENTS
 - images: to display current encountered pokemon
 - button to "throw the pokeball": intialize event listener / catch the selected pokemon / update DOM with new pokemon
 
+
 EVENTS
 - on load
     1. generate 3 pokemon
@@ -28,7 +29,6 @@ EVENTS
     - 2 states: 
         1. initial state: on page load images of 3 random pokemon and empty array OR array from local storage
         2. new state: on button click load 3 new images
-
 
 
 1. When will your state change? In response to what user action?
@@ -52,7 +52,8 @@ EVENTS
 
 1. What variables will need to be used to track data?
     - pokedex variable - a string parsed from local storage
-    - 
+    - total pokemon caught
+
 
 1. What data will need to be saved to local storage?
     - pokedex 
