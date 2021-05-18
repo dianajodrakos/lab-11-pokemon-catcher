@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="UTF-">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=stylesheet href="./styles/reset.css">
+    <link rel=stylesheet href="./styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+    <link rel=stylesheet href="./styles/results.css">
+</head>
+<body>
+    <header>
+        <a href="/">Catch</a> • <a href="/results.html">Results</a>
+    </header>
+    
+    <main>
+        <h1>results</h1>
+        <canvas id="captured-chart"></canvas>
+    </main>
+
+    <footer>
+        <p class="hidden">Total pokémon caught: 0</p>
+        <button id="reset">reset game</button>
+    </footer>
+
+    <script type="module" src="./results.js"></script>
+</body>
+</html>

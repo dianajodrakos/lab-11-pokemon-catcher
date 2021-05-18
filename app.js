@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { encounterPokemon, capturePokemon } from './local-storage-utils.js';
+import { encounterPokemon, capturePokemon, getCapturedTotal } from './local-storage-utils.js';
 import { getRandomPokemon } from './utils.js';
 
 const input1 = document.querySelector('#poke-1');
@@ -17,14 +17,27 @@ renderThreePokemon();
 button.addEventListener('click', () => {
   // get user input
   const input = document.querySelector('input[type=radio]:checked');
+  if (input === null) {
+    alert('Choose your pokémon!')
+    return;
+  }
   const pokemonId = Number(input.value);
-  console.log(input, pokemonId);
-
+  
   // use user input to update state 
   capturePokemon(pokemonId);
-
-  // update DOM to reflect the new state
-  renderThreePokemon();
+  
+  // get data on total captured
+  const pokemonCaptured = getCapturedTotal();
+  
+  // if statement to check if total captured is 10
+  if (Number.isInteger(pokemonCaptured / 10)) {
+    //if captured is 10, redirect to results
+    window.location.replace('./results.html');
+  } else {
+    // update DOM to reflect the new state
+    renderThreePokemon();
+    input = null;
+  }
 });
 
 
@@ -57,4 +70,3 @@ function renderThreePokemon() {
   input2.value = poke2.id;
   input3.value = poke3.id;
 };
-
