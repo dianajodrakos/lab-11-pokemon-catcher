@@ -1,3 +1,5 @@
+import pokemon from './pokemon.js';
+
 export function findById(array, id) {
     const numberId = Number(id);
     for(let item of array) {
@@ -8,7 +10,11 @@ export function findById(array, id) {
     }
 };
 
-// export function getRandomPokemon();
+export function getRandomPokemon() {
+    const randomNumber = Math.floor(Math.random() * pokemon.length);
+    const randomPokemon = pokemon[randomNumber];
+    return randomPokemon;
+};
 
 // export function renderThreePokemon();
 

@@ -3,7 +3,7 @@ import { findById } from '../utils.js';
 const test = QUnit.test;
 
 //findById
-test('input an array and an id, return the first array that matches the id', (expect) => {
+test('findById: input an array and an id, return the first array that matches the id', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const array = [
@@ -34,5 +34,5 @@ test('input an array and an id, return the first array that matches the id', (ex
     expect.deepEqual(actual, expected);
 });
 
-//renderThreePokemon
+
 
