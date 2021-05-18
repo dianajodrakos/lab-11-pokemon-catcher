@@ -1,4 +1,4 @@
-import { getPokedex, setPokedex, encounterPokemon } from '../local-storage-utils.js';
+import { getPokedex, setPokedex, encounterPokemon, capturePokemon } from '../local-storage-utils.js';
 
 const test = QUnit.test;
 
@@ -97,7 +97,6 @@ test('encounterPokemon: encounter a pokemon already in local storage and increme
     // Call the function you're testing and set the result to a const
     encounterPokemon(1);
     const actual = getPokedex(pokedex);
-    console.log(actual);
     
     //Expect
     // Make assertions about what is expected versus the actual result
@@ -122,6 +121,39 @@ test('encounterPokemon: encounter a new pokemon and return a new Pokemon array',
     //Act 
     // Call the function you're testing and set the result to a const
     encounterPokemon(3)
+    const newPokedex = getPokedex();
+    const actual = newPokedex;
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+// capturePokemon
+test('capturePokemon: capture a pokemon and increment capture value', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const pokedex = [
+        {
+            captured: 0,
+            encountered: 1,
+            id: 3,
+        }
+    ];
+
+    const expected = [
+        {
+            captured: 1,
+            encountered: 1,
+            id: 3,
+        }
+    ];
+    setPokedex(pokedex);
+
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    capturePokemon(3)
     const newPokedex = getPokedex();
     const actual = newPokedex;
 

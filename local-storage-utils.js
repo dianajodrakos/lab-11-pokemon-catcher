@@ -4,10 +4,10 @@ const POKEDEX = 'POKEDEX';
 
 export function getPokedex() {
     const stringyPokedex = localStorage.getItem(POKEDEX);
-    const pokedex = JSON.parse(stringyPokedex);
-    if (!pokedex) {
+    if (!stringyPokedex) {
         return [];
     }
+    const pokedex = JSON.parse(stringyPokedex);
     return pokedex;
 };
 
@@ -18,8 +18,7 @@ export function setPokedex(pokedex) {
 
 export function encounterPokemon(pokemonId) {
     const pokedex = getPokedex();
-
-    let matchingPokemon = findById(pokedex, pokemonId);
+    const matchingPokemon = findById(pokedex, pokemonId);
 
     if (matchingPokemon) {
         matchingPokemon.encountered++;
@@ -35,5 +34,8 @@ export function encounterPokemon(pokemonId) {
 };
 
 export function capturePokemon(pokemonId) {
-
+    const pokedex = getPokedex();
+    const matchingPokemon = findById(pokedex, pokemonId);
+    matchingPokemon.captured++;
+    setPokedex(pokedex);
 };
