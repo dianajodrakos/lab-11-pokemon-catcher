@@ -1,0 +1,39 @@
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    margin: var(--gutter);
+}
+
+img {
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 0 var(--gutter);
+    padding: 0;
+}
+
+#render:hover {
+    background: lightseagreen;
+    border: 2px solid lightseagreen;
+    box-shadow: 10px 10px lightgreen;
+}
+
+input {
+    display: none;
+}
+
+input[type=radio]:hover + img {
+    border: 2px solid blue;
+    box-shadow: 20px 20px dodgerblue;
+}
+
+input[type=radio]:checked + img {
+    border: 2px solid crimson;
+    box-shadow: 20px 20px salmon;
+}

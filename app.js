@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { encounterPokemon, capturePokemon, getCapturedTotal } from './local-storage-utils.js';
+import { encounterPokemon, capturePokemon, getCapturedTotal, setPokedex, getPokedex, getSessions, setSessions } from './local-storage-utils.js';
 import { getRandomPokemon } from './utils.js';
 
 const input1 = document.querySelector('#poke-1');
@@ -8,36 +8,44 @@ const input3 = document.querySelector('#poke-3');
 const image1 = document.querySelector('#poke-1-img');
 const image2 = document.querySelector('#poke-2-img');
 const image3 = document.querySelector('#poke-3-img');
-const button = document.querySelector('#capture');
+const catchButton = document.querySelector('#capture');
+const renderButton = document.querySelector('#render');
 
 // initialize state
 renderThreePokemon();
 
 // set event listeners 
-button.addEventListener('click', () => {
+catchButton.addEventListener('click', () => {
   // get user input
-  const input = document.querySelector('input[type=radio]:checked');
+  let input = document.querySelector('input[type=radio]:checked');
   if (input === null) {
     alert('Choose your pokémon!')
     return;
   }
   const pokemonId = Number(input.value);
-  
-  // use user input to update state 
   capturePokemon(pokemonId);
-  
-  // get data on total captured
   const pokemonCaptured = getCapturedTotal();
   
-  // if statement to check if total captured is 10
   if (Number.isInteger(pokemonCaptured / 10)) {
-    //if captured is 10, redirect to results
+
+    // const session = getPokedex();
+    // let allSessions = getSessions();
+    // for (let item of session) {
+
+
+    // let newSessions = allSessions.push(***);
+    // setSessions(newSessions);
+    // console.log(session, allSessions, newSessions);
+    // setPokedex([]);
     window.location.replace('./results.html');
   } else {
-    // update DOM to reflect the new state
     renderThreePokemon();
-    input = null;
+    input.checked = false;
   }
+});
+
+renderButton.addEventListener('click', () => {
+  renderThreePokemon();
 });
 
 

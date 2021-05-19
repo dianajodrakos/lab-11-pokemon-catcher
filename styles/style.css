@@ -13,7 +13,6 @@ main {
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 100%;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -26,28 +25,28 @@ footer {
     margin-bottom: var(--gutter);
 }
 
-img {
-    width: 200px;
-    aspect-ratio: 1 / 1;
+button {
+    color: white;
+    background: gray;
+    border: 2px solid gray;
     border-radius: 50%;
+    height: 100px;
+    width: 100px;
     margin: var(--gutter);
 }
 
-
-input {
-    display: none;
+button:hover {
+    background: navy;
+    border: 2px solid navy;
+    box-shadow: 10px 10px dodgerblue;
 }
 
-input[type=radio]:checked + img {
-    border: 1px solid blue;
-    box-shadow: 20px 20px blue;
-}
 
-input[type=radio]:hover + img {
-    border: 1px solid red;
-    box-shadow: 20px 20px red;
+button:active {
+    background: crimson;
+    border: 2px solid crimson;
+    box-shadow: 10px 10px salmon;
 }
-
 
 .hidden {
     display: none;
