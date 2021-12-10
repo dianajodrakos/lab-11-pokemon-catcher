@@ -1,6 +1,51 @@
-img {
-    width: 200px;
-    aspect-ratio: 1 / 1;
+:root {
+    --gutter: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header {
+    margin-top: var(--gutter);
+}
+
+footer {
+    margin-bottom: var(--gutter);
+}
+
+button {
+    color: white;
+    background: gray;
+    border: 2px solid gray;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: var(--gutter);
+}
+
+button:hover {
+    background: navy;
+    border: 2px solid navy;
+    box-shadow: 10px 10px dodgerblue;
+}
+
+
+button:active {
+    background: crimson;
+    border: 2px solid crimson;
+    box-shadow: 10px 10px salmon;
 }
 
 .hidden {

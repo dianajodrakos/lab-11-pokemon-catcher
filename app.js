@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { encounterPokemon, capturePokemon } from './local-storage-utils.js';
+import { encounterPokemon, capturePokemon, getCapturedTotal, setPokedex, getPokedex, getSessions, setSessions } from './local-storage-utils.js';
 import { getRandomPokemon } from './utils.js';
 
 const input1 = document.querySelector('#poke-1');
@@ -8,22 +8,43 @@ const input3 = document.querySelector('#poke-3');
 const image1 = document.querySelector('#poke-1-img');
 const image2 = document.querySelector('#poke-2-img');
 const image3 = document.querySelector('#poke-3-img');
-const button = document.querySelector('#capture');
+const catchButton = document.querySelector('#capture');
+const renderButton = document.querySelector('#render');
 
 // initialize state
 renderThreePokemon();
 
 // set event listeners 
-button.addEventListener('click', () => {
+catchButton.addEventListener('click', () => {
   // get user input
-  const input = document.querySelector('input[type=radio]:checked');
+  let input = document.querySelector('input[type=radio]:checked');
+  if (input === null) {
+    alert('Choose your pokémon!')
+    return;
+  }
   const pokemonId = Number(input.value);
-  console.log(input, pokemonId);
-
-  // use user input to update state 
   capturePokemon(pokemonId);
+  const pokemonCaptured = getCapturedTotal();
+  
+  if (Number.isInteger(pokemonCaptured / 10)) {
 
-  // update DOM to reflect the new state
+    // const session = getPokedex();
+    // let allSessions = getSessions();
+    // for (let item of session) {
+
+
+    // let newSessions = allSessions.push(***);
+    // setSessions(newSessions);
+    // console.log(session, allSessions, newSessions);
+    // setPokedex([]);
+    window.location.replace('./results.html');
+  } else {
+    renderThreePokemon();
+    input.checked = false;
+  }
+});
+
+renderButton.addEventListener('click', () => {
   renderThreePokemon();
 });
 
@@ -57,4 +78,3 @@ function renderThreePokemon() {
   input2.value = poke2.id;
   input3.value = poke3.id;
 };
-

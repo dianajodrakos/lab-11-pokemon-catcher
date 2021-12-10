@@ -5,21 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel=stylesheet href="./styles/reset.css">
     <link rel=stylesheet href="./styles/style.css">
+    <link rel=stylesheet href="./styles/index.css">
 </head>
 <body>
     <header>
-        <p> a wild pokémon has appeared!</p>
-        <p>***instructions***</p>
+        <a href="./index.html">Catch</a> • <a href="./results.html">Session Results</a> • <a href="./alltime.html">All Time Results</a>
     </header>
-
+    
     <main>
-        <label for ="poke-1"><input type="radio" id="poke-1" value="id1" name="pokemon"/><img src="" id="poke-1-img" /></label>
-        <label for ="poke-2"><input type="radio" id="poke-2" value="id2" name="pokemon"/><img src="" id="poke-2-img" /></label>
-        <label for ="poke-3"><input type="radio" id="poke-3" value="id3" name="pokemon"/><img src="" id="poke-3-img" /></label>
-        <button id="capture">Catch 'em!</button>
+        <section>
+            <p> some wild pokémon have appeared!</p>
+        </section>
+        <section class="inputs">
+            <label for ="poke-1"><input type="radio" id="poke-1" value="id1" name="pokemon"/><img src="" id="poke-1-img" /></label>
+            <div>
+                <label for ="poke-2"><input type="radio" id="poke-2" value="id2" name="pokemon"/><img src="" id="poke-2-img" /></label>
+                <label for ="poke-3"><input type="radio" id="poke-3" value="id3" name="pokemon"/><img src="" id="poke-3-img" /></label>
+            </div>
+        </section>
+        <section>
+            <button id="capture">catch 'em!</button>
+            <button id="render">run away!</button>
+        </section>
     </main>
 
     <footer>
